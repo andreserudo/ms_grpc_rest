@@ -27,6 +27,7 @@ module.exports = {
   },
 
   async loginUser(call, callback) {
+    console.log('olar')
     const { email, password } = call.request.user;
 
     const user = await User.findOne({ email });
@@ -45,6 +46,7 @@ module.exports = {
       token,
     });
   },
+
   async authenticate(call, callback) {
     const { token: fullToken } = call.request;
 
